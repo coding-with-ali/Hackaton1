@@ -72,7 +72,7 @@ export default function Header() {
             <Link href="/" className='hover:text-[#FB2E86] text-lg'>Home</Link>
             <Link href="/about" className='hover:text-[#FB2E86] text-lg'>About</Link>
             <Link href="/" className='hover:text-[#FB2E86] text-lg'>Pages</Link>
-            <Link href="/" className='hover:text-[#FB2E86] text-lg'>Products</Link>
+            <Link href="/product" className='hover:text-[#FB2E86] text-lg'>Products</Link>
             <Link href="/" className='hover:text-[#FB2E86] text-lg'>Blogs</Link>
             <Link href="/grids" className='hover:text-[#FB2E86] text-lg'>Shops</Link>
             <Link href="/" className='hover:text-[#FB2E86] text-lg'>Contact</Link>

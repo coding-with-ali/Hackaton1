@@ -22,6 +22,8 @@ export default function about () {
         <Image
           src="/about.png"
           alt="Business Meeting"
+          width="900"
+          height="900"
           className="w-full max-w-md rounded-lg shadow-lg border-b-[10px] border-l-[10px] border-[#2B3CAB]"
         />
       </div>     

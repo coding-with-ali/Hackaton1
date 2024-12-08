@@ -63,6 +63,8 @@ export default function product() {
               <Image
                 src={selectedImage}
                 alt="Main Product"
+                width="900"
+                height="900"
                 className="w-full h-full object-cover"
               />
             </div>
