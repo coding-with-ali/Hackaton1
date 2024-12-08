@@ -1,29 +1,28 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import Brand from "../homepage/brand";
 
-export default function product() {
-  // Sample data for the product details
+export default function Product() {
   const product = {
     name: "Playwood arm chair",
     price: 32.0,
     oldPrice: 50.0,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.",
-    colors: ["#6C63FF", "#FF5757", "#FFD700"], // Hex color codes
+    colors: ["#6C63FF", "#FF5757", "#FFD700"],
     categories: ["Furniture", "Chair"],
     tags: ["Modern", "Luxury"],
     images: [
-      "/product1.png", // Main product image
+      "/product1.png",
       "/product2.png",
       "/product3.png",
       "/product4.png",
     ],
     reviews: 93,
-    rating: 4, // Out of 5
+    rating: 4,
     tabs: ["Description", "Additional Info", "Reviews", "Video"],
     details: [
       "Aliquam duis vulputate vulputate integer sagittis. Faucibus dolor ornare.",
@@ -32,32 +31,28 @@ export default function product() {
     ],
   };
 
-  // State for selected image and tab
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
   const [selectedTab, setSelectedTab] = useState(product.tabs[0]);
 
   return (
     <div>
-      {/* Header Section */}
       <div className="w-full h-[286px] bg-[#F6F5FF]">
         <div className="absolute top-48 left-10 md:top-60 md:left-60">
           <h2 className="text-[#101750] font-[Josefin Sans] text-[26px] md:text-[36px] font-[700]">
-          Product Details
+            Product Details
           </h2>
           <Link href="" className="px-2">
             Home.
           </Link>
           <Link href="">Page.</Link>
           <Link href="" className="text-[#FB2E86] text-[16px] font-[500] px-2">
-          Product Details
+            Product Details
           </Link>
         </div>
       </div>
 
-      {/* Product Section */}
       <div className="max-w-7xl mx-auto p-6 my-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Side - Images */}
           <div className="flex justify-between items-center flex-row-reverse gap-5">
             <div className="w-full h-[400px] border rounded-lg overflow-hidden">
               <Image
@@ -79,17 +74,18 @@ export default function product() {
                   }`}
                   onClick={() => setSelectedImage(image)}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`Thumbnail ${index}`}
-                    className="w-full h-full object-fit"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Side - Details */}
           <div className="space-y-4">
             <h1 className="text-[36px] font-semibold">{product.name}</h1>
             <div className="flex items-center space-x-2">
@@ -145,7 +141,6 @@ export default function product() {
         </div>
       </div>
 
-      {/* Tabs Section */}
       <div className="bg-[#F9F8FE] py-14 my-10 md:pl-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-start items-center space-x-8 border-b">
@@ -190,7 +185,6 @@ export default function product() {
         </div>
       </div>
 
-      {/* Brand Section */}
       <Brand />
     </div>
   );

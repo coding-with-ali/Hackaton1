@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Link from "next/link";
-import Brand from '../homepage/brand'
+import Image from "next/image"; // Import the Image component
+import Brand from "../homepage/brand";
 
 interface Product {
   id: number;
@@ -14,14 +15,14 @@ interface Product {
   size: string;
 }
 
-export default function cart () {
+export default function Cart() {
   const [products, setProducts] = useState<Product[]>([
     {
       id: 1,
       name: "Ut diam consequat",
       price: 32.0,
       quantity: 1,
-      image: "item4.png",
+      image: "/item4.png",
       color: "Brown",
       size: "XL",
     },
@@ -30,7 +31,7 @@ export default function cart () {
       name: "Vel faucibus posuere",
       price: 32.0,
       quantity: 1,
-      image: "item3.png",
+      image: "/item3.png",
       color: "Brown",
       size: "XL",
     },
@@ -39,7 +40,7 @@ export default function cart () {
       name: "Ac vitae vestibulum",
       price: 32.0,
       quantity: 1,
-      image: "item2.png",
+      image: "/item2.png",
       color: "Brown",
       size: "XL",
     },
@@ -48,7 +49,7 @@ export default function cart () {
       name: "Elit massa diam",
       price: 32.0,
       quantity: 1,
-      image: "item1.png",
+      image: "/item1.png",
       color: "Brown",
       size: "XL",
     },
@@ -57,7 +58,7 @@ export default function cart () {
       name: "Proin pharetra elementum",
       price: 32.0,
       quantity: 1,
-      image: "item6.png",
+      image: "/item6.png",
       color: "Brown",
       size: "XL",
     },
@@ -84,11 +85,17 @@ export default function cart () {
     <div>
       {/* Header Section */}
       <div className="w-full h-[286px] bg-[#F6F5FF]">
-        <div className='absolute top-48 left-10 md:top-60 md:left-60'>
-          <h2 className='text-[#101750] font-[Josefin Sans] text-[26px] md:text-[36px] font-[700]'>Shop Grid Default</h2>
-          <Link href="" className='px-2 '>Home.</Link>
+        <div className="absolute top-48 left-10 md:top-60 md:left-60">
+          <h2 className="text-[#101750] font-[Josefin Sans] text-[26px] md:text-[36px] font-[700]">
+            Shop Grid Default
+          </h2>
+          <Link href="" className="px-2 ">
+            Home.
+          </Link>
           <Link href="">Page.</Link>
-          <Link href="" className='text-[#FB2E86] text-[16px] font-[500] px-2'>Shop Grid Default</Link>
+          <Link href="" className="text-[#FB2E86] text-[16px] font-[500] px-2">
+            Shop Grid Default
+          </Link>
         </div>
       </div>
 
@@ -112,9 +119,11 @@ export default function cart () {
                   <tr key={product.id} className="border-b">
                     <td className="p-4">
                       <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-                        <img
+                        <Image
                           src={product.image}
                           alt={product.name}
+                          width={64}
+                          height={64}
                           className="w-16 h-16 object-cover rounded"
                         />
                         <div>
@@ -173,34 +182,9 @@ export default function cart () {
               Proceed to Checkout
             </button>
           </div>
-
-          {/* Calculate Shipping */}
-          <div className="bg-gray-100 p-4 md:p-6 rounded-lg shadow-md mt-6">
-            <h3 className="text-lg font-semibold">Calculate Shipping</h3>
-            <form className="mt-4 space-y-6 md:space-y-4">
-              <input
-                type="text"
-                placeholder="Country"
-                className="w-full border p-2 rounded text-sm md:text-base"
-              />
-              <input
-                type="text"
-                placeholder="City"
-                className="w-full border p-2 rounded text-sm md:text-base"
-              />
-              <input
-                type="text"
-                placeholder="Postal Code"
-                className="w-full border p-2 rounded text-sm md:text-base"
-              />
-              <Link href="/order" className=" bg-pink-500 text-white px-4 py-2 rounded w-full hover:bg-pink-600 text-sm md:text-base">
-                Calculate Shipping
-              </Link>
-            </form>
-          </div>
         </div>
       </div>
-      <Brand/>
+      <Brand />
     </div>
   );
-};
+}
